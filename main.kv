@@ -1,0 +1,254 @@
+<LoginScreen>:
+    name: 'tela_de_login'
+    md_bg_color: 0, 0, 0, 1
+    FloatLayout:
+        
+        Image:
+            source: 'imagem.png'
+            size_hint: (0.75, 0.75)
+            pos_hint: {'center_x': 0.47, 'center_y': 0.75}
+        MDLabel:
+            text: 'Login'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            halign: 'center'
+            bold: True
+            font_size: dp(21)
+            pos_hint: {'center_x': 0.2, 'center_y': 0.5 }
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Email'
+            icon_right: 'mail'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Senha'
+            icon_right: 'lock'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        MDFillRoundFlatButton:
+            text: 'Entrar'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela_principal'
+                root.manager.transition.direction = 'left'
+        MDTextButton:
+            text: 'Ainda não tem uma conta? [u]Cadastre-se.[/u]'
+            bold: True
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            markup: True
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.09}
+            font_size: dp(10)
+            size_hint_x: .8
+            on_release: 
+                root.manager.current = 'tela_de_cadastro'
+                root.manager.transition.direction = 'left'
+
+<RegisterScreen>:
+    name: 'tela_de_cadastro'
+    md_bg_color: 0, 0, 0, 1
+    FloatLayout:
+            
+        Image:
+            source: 'imagem.png'
+            size_hint: (0.75, 0.75)
+            pos_hint: {'center_x': 0.47, 'center_y': 0.75}
+        MDLabel:
+            text: 'Cadastre-se'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            halign: 'center'
+            bold: True
+            font_size: dp(21)
+            pos_hint: {'center_x': 0.3, 'center_y': 0.55 }
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Nome'
+            icon_right: 'account'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Email'
+            icon_right: 'mail'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Senha'
+            icon_right: 'lock'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+        MDFillRoundFlatButton:
+            text: 'Criar conta'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela_de_login'
+                root.manager.transition.direction = 'right'
+        MDTextButton:
+            text: 'Já tem uma conta? [u]Faça login.[/u]'
+            bold: True
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            markup: True
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.09}
+            font_size: dp(10)
+            size_hint_x: .8
+            on_release: 
+                root.manager.current = 'tela_de_login'
+                root.manager.transition.direction = 'right'
+    
+<TelaPrincipal>:
+    name: 'tela_principal'
+    md_bg_color: 0, 0, 0, 1
+    FloatLayout:
+        Image:
+            source: 'imagem.png'
+            size_hint: (0.75, 0.75)
+            pos_hint: {'center_x': 0.47, 'center_y': 0.75}
+        MDFillRoundFlatButton:
+            text: 'Denuncie agora!'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            size_hint_x: .5
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela_denuncia'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Perfil'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            size_hint_x: .5
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela_de_perfil'
+                root.manager.transition.direction = 'left'
+
+<Denuncia>:
+    name: 'tela_denuncia'
+    md_bg_color: 0, 0, 0, 1
+    FloatLayout:
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.073, 'center_y': 0.965}
+            on_release: 
+                root.manager.current = 'tela_principal'
+                root.manager.transition.direction = 'right'
+        MDLabel:
+            text: 'Faça sua denúncia'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.965}
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            font_size: dp(22)
+            bold: True
+            halign: 'center'
+        MDTextFieldRect:
+            hint_text: 'Cidade do roubo'
+            size_hint: 0.8, None
+            height: dp(32)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.85}
+        MDTextFieldRect:
+            hint_text: 'Bairro do roubo'
+            size_hint: 0.8, None
+            height: dp(32)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        MDTextFieldRect:
+            hint_text: 'O que foi roubado?'
+            size_hint: 0.8, None
+            height: dp(32)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+        MDTextFieldRect:
+            hint_text: 'Características do suspeito'
+            size_hint: 0.8, None
+            height: '100dp'
+            multiline: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDTextFieldRect:
+            hint_text: 'Locomoção do suspeito'
+            size_hint: 0.8, None
+            height: dp(32)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+        MDFillRoundFlatButton:
+            text: 'Confirmar denúncia'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            size_hint_x: .8
+            elevation:0
+            on_release: app.show_alert_dialog()
+
+<Perfil>:
+    name: 'tela_de_perfil'
+    md_bg_color: 0, 0, 0, 1
+    FloatLayout:
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.073, 'center_y': 0.965}
+            on_release: 
+                root.manager.current = 'tela_principal'
+                root.manager.transition.direction = 'right'
+        MDLabel:
+            text: 'Editar seu perfil'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.965}
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            font_size: dp(22)
+            bold: True
+            halign: 'center'
+        Image:
+            source: 'conta.png'
+            size_hint: (0.5, 0.5)
+            pos_hint:{'center_x': 0.5, 'center_y': 0.8}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Nome'
+            icon_right: 'account'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Email'
+            icon_right: 'mail'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Senha'
+            icon_right: 'lock'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        MDTextField:
+            mode: 'round'
+            hint_text: 'Endereço'
+            icon_right: 'map'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        MDFillRoundFlatButton:
+            text: 'Alterar perfil'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            size_hint_x: .8
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela_principal'
+                root.manager.transition.direction = 'right'
